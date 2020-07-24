@@ -24,6 +24,7 @@ def process_soup(soup):
 
     found_h4 = soup.find_all("h4")
     found_label = soup.find_all("label")
+    found_color = soup.find_all("div", class_="view overlay gradient-card-header")
 
 
 
@@ -33,7 +34,10 @@ def process_soup(soup):
 
         # match every first and every entry of label entry with all even h4 entries
         #only takes the tag contents
-        results.append((found_label[2 * i + 1].contents[0], found_h4[i + 1].contents[0]))
+
+        color = found_color[i].attrs['style'][-7:]
+
+        results.append((found_label[2 * i + 1].contents[0], found_h4[i + 1].contents[0], color))
     return results
 
 

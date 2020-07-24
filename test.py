@@ -19,6 +19,7 @@ class MyTestCase(unittest.TestCase):
             entry_id SERIAL PRIMARY KEY,
             district_name VARCHAR(255) NOT NULL,
             capacity INTEGER NOT NULL,
+            color VARCHAR(255) NOT NULL,
             time TIMESTAMP DEFAULT CURRENT_TIMESTAMP(0) 
         )"""
         )

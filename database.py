@@ -15,5 +15,6 @@ def add_data_to_db(data):
     for i in range(len(data)):
         capacity = data[i][0]
         district = data[i][1]
-        cursor.execute("INSERT INTO entries (district_name, capacity) VALUES (%s, %s)", (district, capacity))
+        color = data[i][2]
+        cursor.execute("INSERT INTO entries (district_name, capacity, color) VALUES (%s, %s, %s)", (district, capacity, color))
     conn.commit()
